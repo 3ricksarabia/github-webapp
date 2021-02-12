@@ -10,12 +10,16 @@ const GlobalStyles = createGlobalStyle`
 	}
 
 	a {
-	color: inherit;
-	text-decoration: none;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	h3 {
+		margin: 0;
 	}
 
 	* {
-	box-sizing: border-box;
+		box-sizing: border-box;
 	}
 `;
 
