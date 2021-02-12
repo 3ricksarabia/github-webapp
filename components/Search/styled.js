@@ -35,6 +35,7 @@ const List = styled.ul`
 	width: 30rem;
 	border-radius: 0 0 2rem 2rem;
 	padding: 0 0 5rem 0;
+	overflow: hidden;
 	margin: 0;
 	li {
 		list-style: none;
@@ -47,6 +48,7 @@ const List = styled.ul`
 	}
 	@media (max-width: 768px) {
 		width: 20rem;
+		padding: 0;
 	}
 `;
 

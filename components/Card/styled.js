@@ -31,7 +31,7 @@ const Caption = styled.section`
 	padding: 0.5rem;
 	width: 30rem;
 	height: 70%;
-	padding: 8rem 2rem 0;
+	padding: 8rem 1rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
