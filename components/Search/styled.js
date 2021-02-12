@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
 	background: #000;
-	height: 100vh;
+	height: 90%;
 	width: 100vw;
 	display: flex;
 	flex-direction: column;
@@ -47,7 +47,6 @@ const List = styled.ul`
 	}
 	@media (max-width: 768px) {
 		width: 20rem;
-		padding: 0;
 	}
 `;
 
