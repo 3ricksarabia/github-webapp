@@ -8,7 +8,7 @@ const Wrapper = styled.a`
 	justify-content: flex-start;
 	align-items: center;
 	cursor: pointer;
-	width: 20rem;
+	width: 100%;
 	span {
 		margin-left: 1rem;
 	}

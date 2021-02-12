@@ -7,9 +7,8 @@ const Wrapper = styled.div`
 	flex-direction: column;
 	border-radius: 4px;
 	align-items: center;
-	width: 24rem;
-	height: 34rem;
-	box-shadow: 0px 15px 59px -20px rgb(0 0 0 / 35%);
+	width: 100%;
+	height: 100vh;
 `;
 
 const Thumbnail = styled.section`
@@ -18,30 +17,39 @@ const Thumbnail = styled.section`
 	width: 100%;
 	text-align: center;
 	img {
-		width: 10rem;
+		width: 12rem;
 		border-radius: 50%;
-		margin-top: 5rem;
+		margin-top: 7rem;
+		@media (max-width: 768px) {
+			margin-top: 10rem;
+		}
 	}
 `;
 
 const Caption = styled.section`
 	color: #000;
 	padding: 0.5rem;
-	height: 70%;
-	padding: 6rem 2rem 2rem;
+	width: 30rem;
+	height: 65%;
+	padding: 8rem 2rem 2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	text-align: center;
+	@media (max-width: 768px) {
+		width: 100%;
+		height: 60%;
+	}
 `;
 
-const Button = styled.button`
+const Anchor = styled.a`
 	background: #fff;
 	border: 2px solid #000;
 	padding: 0.5rem 1rem;
 	cursor: pointer;
 	font-weight: bold;
+	text-decoration: none;
 `;
 
-export { Wrapper, Thumbnail, Caption, Button };
+export { Wrapper, Thumbnail, Caption, Anchor };

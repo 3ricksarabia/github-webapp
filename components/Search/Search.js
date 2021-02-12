@@ -5,7 +5,11 @@ import { Input, Wrapper, List } from "./styled";
 const Search = ({ results, handleSearch }) => (
 	<Wrapper>
 		<h1>Search Users</h1>
-		<Input placeholder="@ericksarabia" onInput={(event) => handleSearch(event)} />
+		<Input
+			placeholder="username"
+			onInput={(event) => handleSearch(event)}
+			radius={results.length}
+		/>
 		{results.length > 0 && (
 			<List>
 				{results.map((item) => (

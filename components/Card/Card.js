@@ -1,6 +1,6 @@
-import { Wrapper, Thumbnail, Caption, Button } from "./styled";
+import { Wrapper, Thumbnail, Caption, Anchor } from "./styled";
 
-const Card = ({ bio, image, username, name }) => (
+const Card = ({ bio, image, username, name, url }) => (
 	<Wrapper>
 		<Thumbnail>
 			<img alt={username} src={image} />
@@ -10,8 +10,10 @@ const Card = ({ bio, image, username, name }) => (
 				<h3>{name}</h3>
 				<span>@{username}</span>
 			</div>
-			<p>{bio}</p>
-			<Button>More</Button>
+			{bio && <p>{bio}</p>}
+			<Anchor href={url} target="_blank">
+				More
+			</Anchor>
 		</Caption>
 	</Wrapper>
 );
