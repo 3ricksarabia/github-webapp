@@ -5,7 +5,6 @@ import Container from "../containers/User";
 
 const Home = () => {
 	const [users, setUsers] = useState();
-	console.log("process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN", process.env.GITHUB_ACCESS_TOKEN);
 
 	const searchUsers = (event) => {
 		const USERNAME = event.target.value || "";
