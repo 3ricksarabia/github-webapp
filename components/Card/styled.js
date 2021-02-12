@@ -13,15 +13,15 @@ const Wrapper = styled.div`
 
 const Thumbnail = styled.section`
 	background: #000;
-	height: 30%;
+	height: 20%;
 	width: 100%;
 	text-align: center;
 	img {
 		width: 12rem;
 		border-radius: 50%;
-		margin-top: 7rem;
+		margin-top: 2rem;
 		@media (max-width: 768px) {
-			margin-top: 10rem;
+			margin-top: 3rem;
 		}
 	}
 `;
@@ -30,8 +30,8 @@ const Caption = styled.section`
 	color: #000;
 	padding: 0.5rem;
 	width: 30rem;
-	height: 65%;
-	padding: 8rem 2rem 2rem;
+	height: 70%;
+	padding: 8rem 2rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -39,7 +39,7 @@ const Caption = styled.section`
 	text-align: center;
 	@media (max-width: 768px) {
 		width: 100%;
-		height: 60%;
+		height: 70%;
 	}
 `;
 

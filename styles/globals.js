@@ -16,10 +16,20 @@ const GlobalStyles = createGlobalStyle`
 
 	h3 {
 		margin: 0;
+		font-size: 2rem;
+	}
+
+	p, span, a {
+		font-size: 1.4rem;
 	}
 
 	* {
 		box-sizing: border-box;
+	}
+
+	ul, li {
+		margin: 0;
+		padding: 0;
 	}
 `;
 
