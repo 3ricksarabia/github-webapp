@@ -8,7 +8,7 @@ const Home = () => (
 		<Link href="/users">
 			<a>Search Users</a>
 		</Link>
-		<Link href="/repositories">
+		<Link href="/repos">
 			<a>Search Repositories</a>
 		</Link>
 	</Container>

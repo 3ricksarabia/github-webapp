@@ -28,18 +28,32 @@ const Thumbnail = styled.section`
 
 const Caption = styled.section`
 	color: #000;
-	padding: 0.5rem;
 	width: 30rem;
-	height: 70%;
-	padding: 8rem 1rem 0;
+	height: ${(props) => props.height};
+	padding: ${(props) => props.padding};
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
 	text-align: center;
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		margin-bottom: 4rem;
+
+		li {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 100%;
+			height: 4rem;
+		}
+	}
+
 	@media (max-width: 768px) {
 		width: 100%;
-		height: 70%;
 	}
 `;
 

@@ -3,7 +3,7 @@ import Search from "../components/Search";
 import Navigation from "../components/Navigation";
 import Container from "../containers/User";
 
-const Home = () => {
+const Users = () => {
 	const [users, setUsers] = useState();
 
 	const searchUsers = (event) => {
@@ -26,9 +26,9 @@ const Home = () => {
 	return (
 		<Container>
 			<Navigation back="/" />
-			<Search results={users} handleSearch={searchUsers} />
+			<Search results={users} handleSearch={searchUsers} title="GithHub Users" type="user" />
 		</Container>
 	);
 };
 
-export default Home;
+export default Users;

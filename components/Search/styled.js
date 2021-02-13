@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 	padding-bottom: 6rem;
 	h1 {
 		color: #fff;
+		text-transform: capitalize;
 	}
 `;
 

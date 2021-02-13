@@ -11,6 +11,9 @@ const Wrapper = styled.a`
 	width: 100%;
 	span {
 		margin-left: 1rem;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 `;
 
