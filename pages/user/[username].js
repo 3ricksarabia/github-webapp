@@ -2,7 +2,7 @@ import Card from "../../components/Card";
 import Container from "../../containers/User";
 import Navigation from "../../components/Navigation";
 
-const Post = ({ user }) => (
+const User = ({ user }) => (
 	<Container>
 		<Navigation back="/users" home="/" />
 		<Card
@@ -30,4 +30,4 @@ export async function getServerSideProps({ query }) {
 	};
 }
 
-export default Post;
+export default User;

@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
 		font-size: 2rem;
 	}
 
-	p, span, a {
+	p, span, a, b {
 		font-size: 1.4rem;
 	}
 
@@ -30,6 +30,7 @@ const GlobalStyles = createGlobalStyle`
 	ul, li {
 		margin: 0;
 		padding: 0;
+		list-style: none;
 	}
 `;
 
