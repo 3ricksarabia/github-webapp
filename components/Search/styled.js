@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 
 const Input = styled.input`
 	width: 30rem;
-	height: 50px;
+	min-height: 50px;
 	border-radius: ${(props) => (props.radius > 0 ? "2rem 2rem 0 0" : "2rem")};
 	border: 0;
 	font-size: 1.2rem;
