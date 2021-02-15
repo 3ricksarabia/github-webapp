@@ -1,3 +1,4 @@
+import { string, shape, number } from "prop-types";
 import { Wrapper, Thumbnail, Caption, Anchor } from "./styled";
 
 const Card = ({ bio, image, stats, username, name, url }) => (
@@ -19,7 +20,7 @@ const Card = ({ bio, image, stats, username, name, url }) => (
 			{stats && (
 				<ul>
 					{Object.entries(stats).map((item) => (
-						<li>
+						<li key={item[0]}>
 							<span>{item[1]}</span>
 							<b>{item[0]}</b>
 						</li>
@@ -32,5 +33,33 @@ const Card = ({ bio, image, stats, username, name, url }) => (
 		</Caption>
 	</Wrapper>
 );
+
+Card.propTypes = {
+	/** The user bio. */
+	bio: string,
+	/** The user image source. */
+	image: string,
+	/** The repo stats. */
+	stats: shape({
+		star: number,
+		fork: number,
+		issues: number,
+	}),
+	/** The user identification. */
+	username: string,
+	/** The user or repo name. */
+	name: string,
+	/** The user / repo link's destination. */
+	url: string,
+};
+
+Card.defaultProps = {
+	bio: "",
+	image: "",
+	stats: null,
+	username: "",
+	name: "",
+	url: "",
+};
 
 export default Card;

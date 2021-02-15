@@ -1,8 +1,9 @@
+import { shape } from "prop-types";
 import Card from "../../components/Card";
-import Container from "../../containers/User";
+import Container from "../../components/Container";
 import Navigation from "../../components/Navigation";
 
-const Repository = ({ repo }) => (
+const Repo = ({ repo }) => (
 	<Container>
 		<Navigation back="/repos" home="/" />
 		<Card
@@ -34,4 +35,13 @@ export async function getServerSideProps({ query }) {
 	};
 }
 
-export default Repository;
+Repo.propTypes = {
+	/** The repo data. */
+	repo: shape(),
+};
+
+Repo.defaultProps = {
+	repo: null,
+};
+
+export default Repo;

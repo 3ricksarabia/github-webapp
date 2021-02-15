@@ -1,5 +1,6 @@
+import { shape } from "prop-types";
 import Card from "../../components/Card";
-import Container from "../../containers/User";
+import Container from "../../components/Container";
 import Navigation from "../../components/Navigation";
 
 const User = ({ user }) => (
@@ -29,5 +30,14 @@ export async function getServerSideProps({ query }) {
 		},
 	};
 }
+
+User.propTypes = {
+	/** The user data. */
+	user: shape(),
+};
+
+User.defaultProps = {
+	user: null,
+};
 
 export default User;
