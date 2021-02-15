@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Search from "../components/Search";
 import Navigation from "../components/Navigation";
-import Container from "../containers/User";
+import Container from "../components/Container";
 
 const Users = () => {
 	const [users, setUsers] = useState();

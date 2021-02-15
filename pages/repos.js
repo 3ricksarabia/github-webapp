@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Search from "../components/Search";
 import Navigation from "../components/Navigation";
-import Container from "../containers/User";
+import Container from "../components/Container";
 
 const Repositories = () => {
 	const [repositories, setRepositories] = useState();
 
-	const searchUsers = (event) => {
+	const searchRepos = (event) => {
 		const REPOSITORY = event.target.value || "";
 
 		if (REPOSITORY) {
@@ -28,9 +28,9 @@ const Repositories = () => {
 			<Navigation back="/" />
 			<Search
 				results={repositories}
-				handleSearch={searchUsers}
+				handleSearch={searchRepos}
 				title="GitHub Repositories"
-				type="repository"
+				type="repo"
 			/>
 		</Container>
 	);
