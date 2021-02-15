@@ -21,7 +21,7 @@ const Thumbnail = styled.section`
 		border-radius: 50%;
 		margin-top: 2rem;
 		@media (max-width: 768px) {
-			margin-top: 3rem;
+			margin-top: 2rem;
 		}
 	}
 `;
