@@ -16,8 +16,6 @@ A ReactJS project to search users and repositories by using GitHub API.
 
 ## Instalation
 
----
-
 ### 1. Clone
 
 ```
