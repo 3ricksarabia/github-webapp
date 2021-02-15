@@ -22,6 +22,17 @@ const Container = styled.div`
 			margin: 1rem 0;
 		}
 	}
+
+	footer {
+		position: absolute;
+		bottom: 0;
+		padding: 2rem;
+
+		a {
+			font-size: 1rem;
+			text-decoration: underline;
+		}
+	}
 `;
 
 export default Container;

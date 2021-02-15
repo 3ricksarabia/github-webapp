@@ -15,6 +15,12 @@ const Home = () => (
 				<a>Search Repositories</a>
 			</Link>
 		</main>
+		<footer>
+			Created by{" "}
+			<a href="https://ericksarabia.dev/" target="_blank" rel="noreferrer">
+				Erick Sarabia
+			</a>
+		</footer>
 	</Container>
 );
 
