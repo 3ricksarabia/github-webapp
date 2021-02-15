@@ -12,7 +12,7 @@ A ReactJS project to search users and repositories by using GitHub API.
 -   Babel
 -   ESLint
 -   Prettier
--       PropTypes
+-   PropTypes
 
 ## Instalation
 
@@ -25,7 +25,7 @@ git clone https://github.com/ericksarabia/github-api-search.git
 ### 2. Install dependencies
 
 ```
-npm install
+npm run install
 ```
 
 or
@@ -46,7 +46,7 @@ NEXT_PUBLIC_GITHUB_ACCESS_TOKEN=my_personal_access_token
 ### 4. Execution
 
 ```
-npm dev
+npm run dev
 ```
 
 or
