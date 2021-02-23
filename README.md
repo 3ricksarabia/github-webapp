@@ -14,15 +14,15 @@ A ReactJS project to search users and repositories by using GitHub API.
 -   Prettier
 -   PropTypes
 
-## Instalation
+### Setup
 
-### 1. Clone
+#### 1. Clone
 
 ```
 git clone https://github.com/ericksarabia/github-api-search.git
 ```
 
-### 2. Install dependencies
+#### 2. Install dependencies
 
 ```
 npm run install
@@ -34,7 +34,7 @@ or
 yarn install
 ```
 
-### 3. ENV
+#### 3. ENV
 
 Create a Personal Access Token with [GitHub](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) then generate a `.env.local` file at the project root with the next content:
 
