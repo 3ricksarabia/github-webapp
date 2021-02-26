@@ -2,13 +2,14 @@ import { arrayOf, shape, string, func, oneOf } from "prop-types";
 import Avatar from "../Avatar";
 import { Input, Wrapper, List } from "./styled";
 
-const Search = ({ results, handleSearch, title, type }) => (
+const Search = ({ results, onKeyUp, title, type }) => (
 	<Wrapper>
 		{title && <h1>{title}</h1>}
 		<Input
+			id="search"
 			placeholder={`Search ${type}...`}
-			onInput={(event) => handleSearch(event)}
 			radius={results.length}
+			onKeyUp={(event) => onKeyUp(event)}
 		/>
 		{results.length > 0 && (
 			<List>
@@ -33,8 +34,8 @@ const Search = ({ results, handleSearch, title, type }) => (
 Search.propTypes = {
 	/** The search results. */
 	results: arrayOf(shape()),
-	/** Set values to search. */
-	handleSearch: func,
+	/** Gey key up object. */
+	onKeyUp: func,
 	/** The search title. */
 	title: string,
 	/** The search type. */
@@ -43,7 +44,7 @@ Search.propTypes = {
 
 Search.defaultProps = {
 	results: [],
-	handleSearch: null,
+	onKeyUp: null,
 	title: "",
 	type: "",
 };
