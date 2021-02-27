@@ -1,52 +1,75 @@
-import { arrayOf, shape, string, func, oneOf } from "prop-types";
-import Avatar from "../Avatar";
-import { Input, Wrapper, List } from "./styled";
+import { useState, useEffect } from "react";
+import { string, oneOf } from "prop-types";
+import Form from "../Form";
+import Navigation from "../Navigation";
+import Container from "../Container";
 
-const Search = ({ results, onKeyUp, title, type }) => (
-	<Wrapper>
-		{title && <h1>{title}</h1>}
-		<Input
-			id="search"
-			placeholder={`Search ${type}...`}
-			radius={results.length}
-			onKeyUp={(event) => onKeyUp(event)}
-		/>
-		{results.length > 0 && (
-			<List>
-				{results.map((item) => (
-					<li key={item.id}>
-						<Avatar
-							image={item.avatar_url || item?.owner?.avatar_url}
-							username={item.login}
-							name={item.name}
-							type={type}
-							repo={item.name}
-							owner={item?.owner?.login}
-							id={item.id}
-						/>
-					</li>
-				))}
-			</List>
-		)}
-	</Wrapper>
-);
+const Search = ({ title, type, url }) => {
+	const [results, setResults] = useState([]);
+	const [storage, setStorage] = useState({});
+	const [block, setBlock] = useState(false);
+	const [interval, setInterval] = useState(0);
 
-Search.propTypes = {
-	/** The search results. */
-	results: arrayOf(shape()),
-	/** Gey key up object. */
-	onKeyUp: func,
-	/** The search title. */
-	title: string,
-	/** The search type. */
-	type: oneOf(["repo", "user"]),
+	useEffect(() => {
+		if (Object.keys(storage).length >= 30) {
+			setStorage({});
+		}
+	}, [storage]);
+
+	const searchRepos = (input, currentInterval) => {
+		const STORAGE = storage;
+
+		if (input && !block) {
+			fetch(`${url}?q=${input}&per_page=5`, {
+				headers: {
+					authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
+				},
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					if (data.items.length === 0) {
+						setBlock(true);
+					}
+
+					STORAGE[input] = data.items;
+					setResults(data.items);
+					setStorage(STORAGE);
+				})
+				.catch(() => setResults([]))
+				.finally(() => window.clearInterval(currentInterval));
+		} else {
+			setResults([]);
+		}
+	};
+
+	const onKeyUp = () => {
+		const INPUT = document.querySelector("#search").value;
+		window.clearInterval(interval);
+
+		if (INPUT in storage) {
+			setResults(storage[INPUT]);
+			setBlock(false);
+		} else {
+			const INTERVAL = window.setInterval(() => searchRepos(INPUT, INTERVAL), 1000);
+			setInterval(INTERVAL);
+		}
+	};
+
+	return (
+		<Container>
+			<Navigation back="/" />
+			<Form results={results} onKeyUp={onKeyUp} title={title} type={type} />
+		</Container>
+	);
 };
 
-Search.defaultProps = {
-	results: [],
-	onKeyUp: null,
-	title: "",
-	type: "",
+Search.propTypes = {
+	/** The search title. */
+	title: string.isRequired,
+	/** The search type. */
+	type: oneOf(["repo", "user"]).isRequired,
+	/** The url to fetch. */
+	url: string.isRequired,
 };
 
 export default Search;
